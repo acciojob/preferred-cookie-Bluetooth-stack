@@ -23,8 +23,10 @@ form.addEventListener('submit', (e)=>{
 	let s = getCookies('fontsize');
 	let c = getCookies('fontcolor');
 	console.log(s, c);
-	root.style.setProperty('--fontsize', s);
+	root.style.setProperty('--fontsize', s+"px");
 	root.style.setProperty('--fontcolor', c);
+	// var rs = getComputedStyle(root);
+	// console.log(rs.getPropertyValue('--fontsize'));
 })
 
 
