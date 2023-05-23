@@ -27,7 +27,11 @@ form.addEventListener('submit', (e)=>{
 	root.style.setProperty('--fontcolor', c);
 })
 
-
+let s = getCookies('fontsize');
+let c = getCookies('fontcolor');
+console.log(s, c);
+root.style.setProperty('--fontsize', s+"px");
+root.style.setProperty('--fontcolor', c);
 
 
 function getCookies(cName){
