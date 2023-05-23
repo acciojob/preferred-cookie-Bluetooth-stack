@@ -4,8 +4,8 @@ const f_size = document.querySelector('#fontsize');
 const f_color = document.querySelector('#fontcolor');
 const form = document.querySelector('#myform');
 
-let size;
-let color;
+let size = null;
+let color = null;
 
 f_size.addEventListener('change', ()=>{
 	// alert(f_size.value);
@@ -18,16 +18,15 @@ f_color.addEventListener('change', ()=>{
 
 form.addEventListener('submit', (e)=>{
 	e.preventDefault();
-	document.cookie = 'size='+size;
-	document.cookie = 'color='+color;
+	document.cookie = 'fontsize='+size;
+	document.cookie = 'fontcolor='+color;
+	let s = getCookies('fontsize');
+	let c = getCookies('fontcolor');
+	console.log(s, c);
+	root.style.setProperty('--fontsize', s);
+	root.style.setProperty('--fontcolor', c);
 })
 
-
-let s = getCookies('size');
-let c = getCookies('color');
-console.log(s, c);
-root.style.setProperty('--fontsize', s);
-root.style.setProperty('--fontcolor', c);
 
 
 
