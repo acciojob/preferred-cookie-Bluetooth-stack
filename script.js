@@ -18,15 +18,13 @@ f_color.addEventListener('change', ()=>{
 
 form.addEventListener('submit', (e)=>{
 	e.preventDefault();
-	document.cookie = 'fontsize='+size;
-	document.cookie = 'fontcolor='+color;
+	document.cookie = 'fontsize='+size+'; expires=18 Dec 2025 12:00:00 UTC;path=/'
+	document.cookie = 'fontcolor='+color+'; expires=18 Dec 2025 12:00:00 UTC;path=/'
 	let s = getCookies('fontsize');
 	let c = getCookies('fontcolor');
 	console.log(s, c);
 	root.style.setProperty('--fontsize', s+"px");
 	root.style.setProperty('--fontcolor', c);
-	// var rs = getComputedStyle(root);
-	// console.log(rs.getPropertyValue('--fontsize'));
 })
 
 
@@ -47,6 +45,4 @@ function getCookies(cName){
 	}
 	return '';
 }
-
- 
 
